@@ -1,5 +1,3 @@
-
-const fetch = require('node-fetch');
 const config = require('../config');
 
 test('status should be 200', async () => {
