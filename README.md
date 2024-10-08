@@ -4,7 +4,7 @@
   - This project focuses on creating automated tests for the Urban Grocers API using JavaScript in Visual Studio Code. The primary objective is to verify that the API endpoints are functioning correctly by performing HTTP requests and validating the responses.
 
 3. The documentation source used is apiDoc
-  - https://cnt-f70cbb58-a6e9-4d4a-b57f-bf816cb47388.containerhub.tripleten-services.com/docs
+  - https://cnt-f70cbb58-a6e9-4d4a-b57f-bf816cb47388.containerhub.tripleten-services.com/docs/
 
 4. Technologies and Techniques Used
   - Visual Studio Code
@@ -23,3 +23,7 @@
   - Node.js
   - RESTful API Testing
 
+1. Clone repo into local directory
+2. npm install into terminal
+3. start the Urban Grocer App Server and add into config.js file
+4. start the tests with npx jest
