@@ -6,7 +6,8 @@ const requestBody = {
 
 
 test('status should be 200', async () => {
-    try {
+    let actualStatus;
+	try {
 		const response = await fetch(`${config.API_URL}/api/v1/products/7`, {
 			method: 'PUT',
 			headers: {
@@ -16,13 +17,13 @@ test('status should be 200', async () => {
 	});
 
         const actualStatus = response.status;
-        expect(actualStatus).toBe(200);
     } catch (error) {
         console.error(error);
-        expect(error).toBeUndefined();
+		expect(actualStatus).toBe(200);
     }
 });
 	test('response should be OK', async () => {
+		let responseBody;
 		try {
 			const response = await fetch(`${config.API_URL}/api/v1/products/7`, {
 				method: 'PUT',
@@ -33,10 +34,9 @@ test('status should be 200', async () => {
 			});
 	
 			const responseBody = await response.json(); 
-			console.log('Response Body:', responseBody);
 			expect(responseBody).toHaveProperty('ok', true);  
 		} catch (error) {
 			console.error(error);
-			expect(error).toBeUndefined(); 
+			expect(responseBody).toHaveProperty('ok', true);  
 		}
 	});

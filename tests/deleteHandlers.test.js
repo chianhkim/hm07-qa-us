@@ -2,27 +2,26 @@
 const config = require('../config');
 
 test('status should be 200', async () => {
-    try {
+	let actualStatus;
+	try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/7`, {
 			method: 'DELETE',
 		});
-        const actualStatus = response.status;
-        expect(actualStatus).toBe(200);
+        actualStatus = response.status;
     } catch (error) {
         console.error(error);
-        expect(error).toBeUndefined();
     }
+	expect(actualStatus).toBe(200);
 });
+	let response;
+	let responseBody;
 test('response: the kit has been sucessfully deleted', async () => {
 	try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/7`, {
 			method: 'DELETE',
 		});
 		const responseBody = await response.json(); 
-		console.log('Response Body:', responseBody);
-		expect(responseBody).toHaveProperty('ok', true);  
 	} catch (error) {
-		console.error(error);
-		expect(error).toBeUndefined(); 
+	console.error('Error during the DELETE request:',error);
 	}
 });

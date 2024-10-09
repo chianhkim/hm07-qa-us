@@ -43,7 +43,6 @@ test("response body should contain expected data", async () => {
       body: JSON.stringify(requestBody),
     });
     actualResponseBody = await response.json();
-    console.log("Response Body:", actualResponseBody);
   } catch (error) {
     console.error(error);
   }

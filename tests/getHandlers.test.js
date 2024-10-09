@@ -8,12 +8,10 @@ test('status should be 200', async () => {
 	} catch (error) {
 		console.error(error);
 	}
-	console.log("Expecting status to be 200");
 	expect(actualStatus).toBe(200);
 });
 
-test('should retrieve product details with expected data', async () => {
-  let actualStatus;
+test('should successfully receive kit and products in kit', async () => {
   let responseBody;
 
   try {
