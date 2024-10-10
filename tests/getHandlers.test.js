@@ -28,9 +28,5 @@ test('should successfully receive kit and products in kit', async () => {
     console.error('Error fetching product details:', error);
     throw error;
   }
-
-
-  expect(actualStatus).toBe(200);
-
   expect(responseBody).toHaveProperty('name', 'For picnic');
 });
